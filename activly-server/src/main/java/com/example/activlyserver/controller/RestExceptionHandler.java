@@ -1,5 +1,6 @@
 package com.example.activlyserver.controller;
 
+import com.example.activlyserver.exception.ViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -23,6 +24,14 @@ public class RestExceptionHandler {
             violations.add(new Violation(fieldError.getField(), fieldError.getDefaultMessage()));
         }
         return violations;
+    }
+    
+    
+    @ExceptionHandler(ViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    Violation onViolationException(ViolationException e) {
+        return new Violation(e.getField(), e.getMessage());
     }
     
 }

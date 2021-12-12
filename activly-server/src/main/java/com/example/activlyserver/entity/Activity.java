@@ -1,5 +1,6 @@
 package com.example.activlyserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,12 +20,13 @@ public class Activity {
     
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "owner")
-    private String owner;
+    private User owner;
     
     private String discipline;
     
     private String place;
     
+    @JsonFormat(pattern="dd-MM-yyyy HH:mm")
     private Date time;
     
 }
