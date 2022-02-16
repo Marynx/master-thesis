@@ -6,14 +6,12 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import entity.Activity;
+import entity.dto.UpdateActivityDTO;
 import lombok.extern.slf4j.Slf4j;
 import service.ActivityService;
 import service.ActivityServiceImpl;
 import utils.ApiGatewayResponseUtils;
-
-import java.sql.Date;
 
 @Slf4j
 public class UpdateActivityHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
@@ -26,12 +24,12 @@ public class UpdateActivityHandler implements RequestHandler<APIGatewayProxyRequ
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGatewayProxyRequestEvent, Context context) {
         try {
             String activityId = apiGatewayProxyRequestEvent.getPathParameters().get("id");
-            JsonObject activityFromRequest = gson.fromJson(apiGatewayProxyRequestEvent.getBody(), JsonObject.class);
+            UpdateActivityDTO activityFromRequest = gson.fromJson(apiGatewayProxyRequestEvent.getBody(), UpdateActivityDTO.class);
             Activity activityToUpdate = activityService.getActivity(Long.valueOf(activityId));
             if ( activityToUpdate != null ) {
-                activityToUpdate.setDiscipline(activityFromRequest.get("discipline").getAsString());
-                activityToUpdate.setPlace(activityFromRequest.get("place").getAsString());
-                activityToUpdate.setTime(Date.valueOf(activityFromRequest.get("time").getAsString()));
+                activityToUpdate.setDiscipline(activityFromRequest.getDiscipline());
+                activityToUpdate.setPlace(activityFromRequest.getPlace());
+                activityToUpdate.setTime(activityFromRequest.getTime());
                 activityService.updateActivity(Long.valueOf(activityId), activityToUpdate);
                 return ApiGatewayResponseUtils.successResponse(gson.toJson(activityToUpdate));
             } else {

@@ -35,7 +35,7 @@ public class ActivityServiceImpl implements ActivityService {
             preparedStatement.setString(1, activity.getUsername());
             preparedStatement.setString(2, activity.getDiscipline());
             preparedStatement.setString(3, activity.getPlace());
-            preparedStatement.setDate(4, activity.getTime());
+            preparedStatement.setTimestamp(4, activity.getTime());
             preparedStatement.executeUpdate();
             try ( ResultSet generatedKeys = preparedStatement.getGeneratedKeys() ) {
                 if ( generatedKeys.next() ) {
@@ -53,18 +53,19 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public Activity getActivity(Long id) throws ActivityDatabaseOperationException {
         try {
-            Activity activity = new Activity();
+            Activity activity = null;
             PreparedStatement preparedStatement = connection.
                     prepareStatement(GET_ACTIVITY_BY_ID_QUERY);
             preparedStatement.setLong(1, id);
             ResultSet rs = preparedStatement.executeQuery();
             
             if ( rs.next() ) {
+                activity = new Activity();
                 activity.setId(rs.getLong("id"));
                 activity.setUsername(rs.getString("username"));
                 activity.setDiscipline(rs.getString("discipline"));
                 activity.setPlace(rs.getString("place"));
-                activity.setTime(rs.getDate("time"));
+                activity.setTime(rs.getTimestamp("time"));
             }
             return activity;
         } catch ( SQLException e ) {
@@ -78,7 +79,7 @@ public class ActivityServiceImpl implements ActivityService {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_ACTIVITY_BY_ID_QUERY);
             preparedStatement.setString(1, activity.getDiscipline());
             preparedStatement.setString(2, activity.getPlace());
-            preparedStatement.setDate(3, activity.getTime());
+            preparedStatement.setTimestamp(3, activity.getTime());
             preparedStatement.setLong(4, id);
             preparedStatement.executeUpdate();
         } catch ( SQLException e ) {
@@ -111,7 +112,7 @@ public class ActivityServiceImpl implements ActivityService {
                 activity.setUsername(rs.getString("username"));
                 activity.setDiscipline(rs.getString("discipline"));
                 activity.setPlace(rs.getString("place"));
-                activity.setTime(rs.getDate("time"));
+                activity.setTime(rs.getTimestamp("time"));
                 activities.add(activity);
             }
             return activities;

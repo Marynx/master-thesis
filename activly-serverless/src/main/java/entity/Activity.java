@@ -2,7 +2,7 @@ package entity;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 public class Activity {
@@ -15,6 +15,6 @@ public class Activity {
     
     private String place;
     
-    private Date time;
+    private Timestamp time;
 
 }
