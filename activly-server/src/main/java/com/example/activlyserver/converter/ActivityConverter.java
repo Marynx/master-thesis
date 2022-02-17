@@ -11,10 +11,10 @@ import java.util.stream.Collectors;
 @UtilityClass
 public class ActivityConverter {
     
-    private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+    private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     
     public static ActivityDTO convertToDto(Activity activity){
-        return new ActivityDTO(activity.getDiscipline(), activity.getDiscipline(),  FORMATTER.format(activity.getTime()));
+        return new ActivityDTO(activity.getUsername(), activity.getDiscipline(), activity.getDiscipline(),  FORMATTER.format(activity.getTime()));
     }
     
     public static List<ActivityDTO> convertToDtoList(List<Activity> activities){

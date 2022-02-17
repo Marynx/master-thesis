@@ -16,38 +16,31 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
     
-    private static final String TIME_FORMAT = "dd-MM-yyyy HH:mm";
+    private static final String TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     
     private final ActivityRepository activityRepository;
     
-    private final AuthProvider authProvider;
-    
     @Override
     public Activity createActivity(ActivityDTO activityDTO) {
-        Activity activity = updateFromDto(new Activity(), activityDTO);
-        activity.setOwner(authProvider.getUserEntity());
+        Activity activity = updateFromDto(new Activity(), activityDTO, false);
         return activityRepository.save(activity);
     }
     
     @Override
-    public Activity getActivity(@NonNull Long id, boolean validateOwner) {
-        String owner = authProvider.getUserLogin();
+    public Activity getActivity(@NonNull Long id) {
         Activity activity = activityRepository.findById(id).orElseThrow(() -> new ViolationException("id", "Activity for " + id + " not found"));
-        if ( validateOwner && !activity.getOwner().getUsername().equals(owner) ) {
-            throw new ViolationException("owner", "Activity is not yours");
-        }
         return activity;
     }
     
     @Override
     public Activity updateActivity(@NonNull Long id, ActivityDTO activityDTO){
-        Activity toUpdate = updateFromDto(getActivity(id, true),activityDTO);
+        Activity toUpdate = updateFromDto(getActivity(id),activityDTO, true);
         return activityRepository.save(toUpdate);
     }
     
     @Override
     public void deleteActivity(@NonNull Long id) {
-        Activity toDelete = getActivity(id, true);
+        Activity toDelete = getActivity(id);
         activityRepository.delete(toDelete);
     }
     
@@ -56,7 +49,10 @@ public class ActivityServiceImpl implements ActivityService {
         return activityRepository.findAll();
     }
     
-    private Activity updateFromDto(Activity activity, ActivityDTO activityDTO){
+    private Activity updateFromDto(Activity activity, ActivityDTO activityDTO, boolean isUpdate){
+        if(!isUpdate) {
+            activity.setUsername(activityDTO.getUsername());
+        }
         activity.setDiscipline(activityDTO.getDiscipline());
         activity.setPlace(activityDTO.getPlace());
         try {

@@ -8,6 +8,9 @@ import javax.validation.constraints.NotEmpty;
 public class ActivityDTO {
     
     @NotEmpty
+    String username;
+    
+    @NotEmpty
     String discipline;
     
     @NotEmpty

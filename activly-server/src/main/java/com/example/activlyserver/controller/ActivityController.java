@@ -26,7 +26,7 @@ public class ActivityController {
     
     @GetMapping(ActivityService.BY_ID)
     public ResponseEntity<ActivityDTO> getActivity(@PathVariable Long id){
-        Activity toFind = activityService.getActivity(id,false);
+        Activity toFind = activityService.getActivity(id);
         return ResponseEntity.ok(ActivityConverter.convertToDto(toFind));
     }
     

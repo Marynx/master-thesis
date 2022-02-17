@@ -13,7 +13,7 @@ public interface ActivityService {
     
     Activity createActivity(ActivityDTO activityDTO);
     
-    Activity getActivity(Long id, boolean validateOwner);
+    Activity getActivity(Long id);
     
     Activity updateActivity(Long id, ActivityDTO activityDTO);
     
