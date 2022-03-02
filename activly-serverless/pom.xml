@@ -65,6 +65,16 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.23</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.21.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-hikaricp</artifactId>
+			<version>5.4.21.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -111,5 +121,34 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+<!--	<build>-->
+<!--		<plugins>-->
+<!--			&lt;!&ndash;-->
+<!--			  Using the Apache Maven Shade plugin to package the jar-->
+<!--			  "This plugin provides the capability to package the artifact-->
+<!--			  in an uber-jar, including its dependencies and to shade - i.e. rename - -->
+<!--			  the packages of some of the dependencies."-->
+<!--			  Link: https://maven.apache.org/plugins/maven-shade-plugin/-->
+<!--			&ndash;&gt;-->
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-shade-plugin</artifactId>-->
+<!--				<version>2.3</version>-->
+<!--				<configuration>-->
+<!--					<createDependencyReducedPom>false</createDependencyReducedPom>-->
+<!--				</configuration>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>package</phase>-->
+<!--						<goals>-->
+<!--							<goal>shade</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+<!--		</plugins>-->
+<!--	</build>-->
 
 </project>
