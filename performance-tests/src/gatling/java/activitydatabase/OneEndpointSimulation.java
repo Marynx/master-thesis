@@ -24,9 +24,9 @@ public class OneEndpointSimulation extends Simulation {
     
     
     {
-        setUp(scn.injectOpen(atOnceUsers(60)
-//                        rampUsersPerSec(120).to(400).during(60),
-//                        constantUsersPerSec(400).during(Duration.ofMinutes(2))
+        setUp(scn.injectOpen(atOnceUsers(1),
+                        rampUsersPerSec(1).to(60).during(60),
+                        constantUsersPerSec(60).during(Duration.ofMinutes(2))
                         ).protocols(httpProtocol)
                 );
     }
