@@ -1,22 +1,26 @@
 package utils;
 
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig;
+import software.amazon.awssdk.auth.credentials.EnvironmentVariableCredentialsProvider;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
+import software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
+
+import java.net.HttpURLConnection;
 
 public class DynamoDBAdapter {
     
     private static DynamoDBAdapter dbAdapter = null;
     
-    private final AmazonDynamoDB client;
+    private final DynamoDbClient client;
     
-    private DynamoDBMapper mapper;
+    private DynamoDbEnhancedClient enhancedClient;
     
     private DynamoDBAdapter() {
-        this.client = AmazonDynamoDBClientBuilder.standard()
-                .withRegion(Regions.US_EAST_1)
+        this.client = DynamoDbClient.builder()
+                .region(Region.US_EAST_1)
+                .httpClientBuilder(UrlConnectionHttpClient.builder())
+                .credentialsProvider(EnvironmentVariableCredentialsProvider.create())
                 .build();
     }
     
@@ -28,16 +32,17 @@ public class DynamoDBAdapter {
         return dbAdapter;
     }
     
-    public AmazonDynamoDB getDbClient() {
+    public DynamoDbClient getDbClient() {
         return this.client;
     }
     
-    public DynamoDBMapper createDbMapper(DynamoDBMapperConfig mapperConfig) {
+    public DynamoDbEnhancedClient createEnhancedDbClient() {
         if ( this.client != null ) {
-            mapper = new DynamoDBMapper(this.client, mapperConfig);
+            enhancedClient = DynamoDbEnhancedClient.builder().
+            dynamoDbClient(this.client).build();
         }
         
-        return this.mapper;
+        return this.enhancedClient;
     }
     
 }

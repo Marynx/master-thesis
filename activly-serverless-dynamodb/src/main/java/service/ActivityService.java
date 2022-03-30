@@ -8,4 +8,6 @@ public interface ActivityService {
 
     List<Activity> getAllActivities();
     
+    void warmUp();
+    
 }

@@ -50,9 +50,9 @@ public class RandomListSimulation extends Simulation {
                     .pause(2)
     );
     
-    {
-        setUp(scn.injectOpen(atOnceUsers(1))).protocols(httpProtocol);
-    }
+//    {
+//        setUp(scn.injectOpen(atOnceUsers(1))).protocols(httpProtocol);
+//    }
     
     private List<Integer> generateList(int n) {
         List<Integer> list = new ArrayList<>();

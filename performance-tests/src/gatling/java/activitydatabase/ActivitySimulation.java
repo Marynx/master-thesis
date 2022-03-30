@@ -30,9 +30,9 @@ public class ActivitySimulation extends Simulation {
             .exec(http("Get activity with id 7")
                     .get("/activities/7"));
 
-    {
-        setUp(scn.injectOpen(constantUsersPerSec(perMinute(10d)).during(Duration.ofMinutes(2))).protocols(httpProtocol));
-    }
+//    {
+//        setUp(scn.injectOpen(constantUsersPerSec(perMinute(10d)).during(Duration.ofMinutes(2))).protocols(httpProtocol));
+//    }
 
     private static Double perMinute(Double rate){
         return rate /60;
