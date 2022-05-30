@@ -29,4 +29,8 @@ public class DbUtil {
         
     }
     
+    public static void closeConnection() throws SQLException {
+        connection.close();
+    }
+    
 }

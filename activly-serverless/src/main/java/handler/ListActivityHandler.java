@@ -10,6 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import service.ActivityService;
 import service.ActivityServiceImpl;
 import utils.ApiGatewayResponseUtils;
+import utils.DbUtil;
+
+import java.sql.SQLException;
 
 @Slf4j
 public class ListActivityHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
@@ -21,10 +24,17 @@ public class ListActivityHandler implements RequestHandler<APIGatewayProxyReques
     @Override
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGatewayProxyRequestEvent, Context context) {
         try {
+            activityService = new ActivityServiceImpl(DbUtil.getConnection());
             return ApiGatewayResponseUtils.successResponse(gson.toJson(activityService.getAllActivities()));
         } catch ( Exception e ) {
             log.error("Error occurred during execution of lambda: " + e);
             return ApiGatewayResponseUtils.failedResponse("Error occurred during execution of lambda.");
+        } finally {
+            try {
+                DbUtil.closeConnection();
+            } catch ( SQLException e ) {
+                e.printStackTrace();
+            }
         }
     }
     
