@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4324448-1d90-4cd1-bfad-f89c193af837" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../.idea/magisterka.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/style2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/style3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../arti/.idea/arti.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/modules/performance-tests-24h-aws.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/sbt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/classes/java/gatling/activitydatabase/OneEndpointSimulation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/generated/gatlingLogback/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/reports/gatling/oneendpointsimulation-20220401003504165/simulation.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/resources/gatling/gatling.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/tmp/compileGatlingJava/previous-compilation-data.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/tmp/gatlingEnterprisePackage/META-INF/maven/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/build/tmp/gatlingEnterprisePackage/META-INF/maven/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Wyniki1.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Wyniki1.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../activly-serverless/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../activly-serverless/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/handler/ListActivityHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/handler/ListActivityHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/service/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/service/ActivityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/utils/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/utils/DbUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../activly-serverless/src/main/java/utils/LoggerUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/src/gatling/java/activitydatabase/OneEndpointSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../performance-tests-24h-aws/src/gatling/java/activitydatabase/OneEndpointSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../performance-tests/src/gatling/java/activitydatabase/OneEndpointSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../performance-tests/src/gatling/java/activitydatabase/OneEndpointSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../performance-tests/src/gatling/java/activitydatabase/RandomListSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../performance-tests/src/gatling/java/activitydatabase/RandomListSimulation.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="29tjpcI37L4YsTHlRMz2xmWbEnc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/style" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Studia II\magisterka\Wyniki\Server vs Serverless RDS\1_60_60\Serverless\v3\style" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4324448-1d90-4cd1-bfad-f89c193af837" name="Default Changelist" comment="" />
+      <created>1653939459410</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653939459410</updated>
+      <workItem from="1653939460469" duration="4211000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,10 @@
+{
+  "simulation": "activitydatabase.OneEndpointSimulation",
+  "simulationId": "oneendpointsimulation",
+  "start": 1649374723696,
+  "description": "",
+  "scenarios": ["Scenario 1"],
+  "assertions": [
+
+  ]
+}

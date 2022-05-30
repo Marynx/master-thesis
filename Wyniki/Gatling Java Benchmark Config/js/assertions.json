@@ -1,0 +1,10 @@
+{
+  "simulation": "activitydatabase.RandomListSimulation",
+  "simulationId": "randomlistsimulation",
+  "start": 1646099129884,
+  "description": "",
+  "scenarios": ["Scenario Java 128"],
+  "assertions": [
+
+  ]
+}

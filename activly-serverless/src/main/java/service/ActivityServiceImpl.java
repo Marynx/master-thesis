@@ -100,12 +100,13 @@ public class ActivityServiceImpl implements ActivityService {
     
     @Override
     public List<Activity> getAllActivities() {
-        try {
-            List<Activity> activities = new ArrayList<>();
-            PreparedStatement preparedStatement = connection.
+    
+        try(Connection con = DbUtil.getConnection();
+            PreparedStatement preparedStatement = con.
                     prepareStatement(GET_ALL_ACTIVITIES_QUERY);
             ResultSet rs = preparedStatement.executeQuery();
-            
+        ){
+            List<Activity> activities = new ArrayList<>();
             while ( rs.next() ) {
                 Activity activity = new Activity();
                 activity.setId(rs.getLong("id"));
@@ -116,7 +117,32 @@ public class ActivityServiceImpl implements ActivityService {
                 activities.add(activity);
             }
             return activities;
-        } catch ( SQLException e ) {
+            
+            
+            
+        }
+        
+//        try {
+//            List<Activity> activities = new ArrayList<>();
+//            PreparedStatement preparedStatement = connection.
+//                    prepareStatement(GET_ALL_ACTIVITIES_QUERY);
+//            ResultSet rs = preparedStatement.executeQuery();
+//
+//            while ( rs.next() ) {
+//                Activity activity = new Activity();
+//                activity.setId(rs.getLong("id"));
+//                activity.setUsername(rs.getString("username"));
+//                activity.setDiscipline(rs.getString("discipline"));
+//                activity.setPlace(rs.getString("place"));
+//                activity.setTime(rs.getTimestamp("time"));
+//                activities.add(activity);
+//            }
+//
+//            preparedStatement.close();
+//            rs.close();
+//            return activities;
+//        }
+        catch ( SQLException e ) {
             throw new ActivityDatabaseOperationException("Error during getting activities.", e);
         }
     }

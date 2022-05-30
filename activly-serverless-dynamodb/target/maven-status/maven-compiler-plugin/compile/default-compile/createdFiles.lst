@@ -1,0 +1,6 @@
+handler\ListActivityHandler.class
+service\ActivityService.class
+utils\ApiGatewayResponseUtils.class
+entity\Activity.class
+utils\DynamoDBAdapter.class
+service\ActivityServiceImpl.class
